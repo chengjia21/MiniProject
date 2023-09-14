@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import sg.edu.nus.iss.miniProject.exceptions.ResourceNotFoundException;
+import sg.edu.nus.iss.miniProject.model.Users;
 import sg.edu.nus.iss.miniProject.model.Wines;
 
 @Repository
@@ -35,7 +36,22 @@ public class ShopRepository {
     }
 
 
+ private final String getAllUsersSQL = "select * from users";
 
+
+     public List<Users> getAllUsers() {
+        List<Users> usersList = jdbcTemplate.query(getAllUsersSQL, BeanPropertyRowMapper.newInstance(Users.class));
+
+        if (usersList.isEmpty()) {
+            // throw custom exception
+            throw new ResourceNotFoundException("Users not found");
+        }
+
+        return usersList;
+
+
+        
+    }
 
 
 

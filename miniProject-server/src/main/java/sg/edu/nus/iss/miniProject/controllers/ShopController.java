@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import jakarta.json.Json;
 import jakarta.json.JsonObject;
 import jakarta.json.JsonObjectBuilder;
+import sg.edu.nus.iss.miniProject.model.Users;
 import sg.edu.nus.iss.miniProject.model.Wines;
 import sg.edu.nus.iss.miniProject.services.ShopService;
 
@@ -34,6 +35,7 @@ public class ShopController {
 
     @Autowired
     ShopService shopSvc;
+
 
     // @PostMapping(path = "/login")
     // @ResponseBody
@@ -66,6 +68,20 @@ public class ShopController {
         return ResponseEntity.ok()
                 .header("getAllWinesHeader", "AllWinesHeaderValue")
                 .body(allWinesList);
+        // return
+    }
+
+    @GetMapping(path = "/allusers")
+    public ResponseEntity<List<Users>> getAllUsers() {
+
+        List<Users> allUsersList = shopSvc.getAllUsers();
+
+        // model.addAttribute("types", types);
+        // return ResponseEntity.ok().body(allWinesList);
+
+        return ResponseEntity.ok()
+                .header("getAllUsersHeader", "AllUsersHeaderValue")
+                .body(allUsersList);
         // return
     }
 

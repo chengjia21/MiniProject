@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import sg.edu.nus.iss.miniProject.model.Users;
 import sg.edu.nus.iss.miniProject.model.Wines;
 import sg.edu.nus.iss.miniProject.repositories.ShopRepository;
 
@@ -21,7 +22,10 @@ public class ShopService {
 
 
 
-
+   public List<Users> getAllUsers() {
+		List<Users> usersList = shopRepo.getAllUsers();
+		return usersList;
+	}
 
 
 
