@@ -29,7 +29,7 @@ import sg.edu.nus.iss.miniProject.services.ShopService;
 @Controller
 @RequestMapping(path = "/api")
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://www.heavenlygrovewinery.com/")
 
 public class ShopController {
 
