@@ -16,7 +16,7 @@ export class DataService {
 
 
   getAllProducts() {
-    return this.http2.get<any>('http://localhost:8080/api/allproducts');
+    return this.http2.get<any>('https://www.heavenlygrovewinery.com/api/allproducts');
 
   };
 
@@ -29,14 +29,14 @@ export class DataService {
 
 
 
-  // testing apis
-  getWeather(city: string, key: string): Promise<any> {
-    const params = new HttpParams()
-      .set('q', city)
-      .set('appid', key);
+  // // testing apis
+  // getWeather(city: string, key: string): Promise<any> {
+  //   const params = new HttpParams()
+  //     .set('q', city)
+  //     .set('appid', key);
 
-    return (lastValueFrom(this.http2.get<any>(
-      'https://api.openweathermap.org/data/2.5/weather',
-      {params: params})));
-  }
+  //   return (lastValueFrom(this.http2.get<any>(
+  //     'https://api.openweathermap.org/data/2.5/weather',
+  //     {params: params})));
+  // }
 }
