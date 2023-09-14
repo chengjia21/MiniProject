@@ -1,7 +1,7 @@
 
 ## Additional Features added which I didnt add in Project Requirements PDF
 
-Google Maps, Dockerfile
+Google Maps, Dockerfile, PWA, Include application manifest, Service Workers, Domain Name
 
 
 

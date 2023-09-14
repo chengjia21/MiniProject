@@ -37,7 +37,33 @@ public class ShopController {
     ShopService shopSvc;
 
 
-    // @PostMapping(path = "/login")
+ 
+
+    @GetMapping(path = "/allproducts")
+    public ResponseEntity<List<Wines>> getAllWines() {
+
+        List<Wines> allWinesList = shopSvc.getAllWines();
+
+        return ResponseEntity.ok()
+                .header("getAllWinesHeader", "AllWinesHeaderValue")
+                .body(allWinesList);
+    }
+
+
+
+    @GetMapping(path = "/allusers")
+    public ResponseEntity<List<Users>> getAllUsers() {
+
+        List<Users> allUsersList = shopSvc.getAllUsers();
+
+        return ResponseEntity.ok()
+                .header("getAllUsersHeader", "AllUsersHeaderValue")
+                .body(allUsersList);
+        
+    }
+
+
+   // @PostMapping(path = "/login")
     // @ResponseBody
     // public ResponseEntity<String> postLoginDetails(@RequestBody User user) {
     // // RequestBody of type User, in User model
@@ -57,44 +83,5 @@ public class ShopController {
 
     //
 
-    @GetMapping(path = "/allproducts")
-    public ResponseEntity<List<Wines>> getAllWines() {
-
-        List<Wines> allWinesList = shopSvc.getAllWines();
-
-        // model.addAttribute("types", types);
-        // return ResponseEntity.ok().body(allWinesList);
-
-        return ResponseEntity.ok()
-                .header("getAllWinesHeader", "AllWinesHeaderValue")
-                .body(allWinesList);
-        // return
-    }
-
-    @GetMapping(path = "/allusers")
-    public ResponseEntity<List<Users>> getAllUsers() {
-
-        List<Users> allUsersList = shopSvc.getAllUsers();
-
-        // model.addAttribute("types", types);
-        // return ResponseEntity.ok().body(allWinesList);
-
-        return ResponseEntity.ok()
-                .header("getAllUsersHeader", "AllUsersHeaderValue")
-                .body(allUsersList);
-        // return
-    }
-
-    // @GetMapping(path = "/allproducts")
-    // public List<Wines> getAllWines2() {
-
-    // List<Wines> allWinesList = shopSvc.getAllWines();
-
-    // return allWinesList;
-    // // model.addAttribute("types", types);
-
-    // // return ResponseEntity.ok().header("fefe").body(allWinesList);
-    // // return
-    // }
 
 }
