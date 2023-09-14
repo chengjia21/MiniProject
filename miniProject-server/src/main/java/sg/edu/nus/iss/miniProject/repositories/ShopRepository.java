@@ -25,7 +25,7 @@ public class ShopRepository {
 
         if (winesList.isEmpty()) {
             // throw custom exception
-            throw new ResourceNotFoundException("Order not found");
+            throw new ResourceNotFoundException("Wines not found");
         }
 
         return winesList;
